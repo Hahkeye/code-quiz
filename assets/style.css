@@ -1,0 +1,22 @@
+
+#site-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+#header-wrapper{
+    display: inline;
+}
+#body-wrapper{
+}
+#footer-wrapper{
+    position: sticky;
+}
+
+
+
+
+#correct{
+    color: red;
+    border-top: 10px black;
+}
