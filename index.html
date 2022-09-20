@@ -18,11 +18,25 @@
         <div id="body-wrapper">
             <body>
                 <main>
-                    <h1 id="question-title">Coding Quiz</h1>
-                    <br>
-                    <div id="selection-section">Try to answer to your best of your ability.</div>
-                    <br>
-                    <p id="feedback"></p>
+                    <div id="intro">
+                        <h1>Coding Challenge</h1>
+                        <p> Try doing what ever it is so you can get achive the highest score. </p>
+                    </div>
+                    <div id="main">
+                        <h1 id="question-title"></h1>
+                        <br>
+                        <div id="selection-section"></div>
+                        <br>
+                        <p id="feedback"></p>
+                    </div>
+                    <div id="outro">
+                        <h1>All done</h1>
+                        <p>Your score is X</p>
+                        <p>enter initials then add to board.</p>
+                        <label for="initials">Enter your initials for the leaderboard:</label>
+                        <input type="text" id="initials" name="initials" maxlength="3">
+                        <button>submit</button>
+                    </div>
                 </main>
             </body>
         </div>

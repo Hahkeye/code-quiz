@@ -11,8 +11,10 @@ var startButton = document.getElementById('start');
 const QUESTION_TITLE = document.getElementById('question-title');
 const SELECTIONS = document.getElementById('selection-section');
 const FEEDBACK = document.getElementById('feedback');
-const CLOCK = document.getElementById('timer');;
-
+const CLOCK = document.getElementById('timer');
+const mainTarget = document.getElementById('main');
+const OUTRO = document.getElementById('outro');
+const INTRO = document.getElementById('intro');
 
 
 function removeAllChildNodes(parn){
@@ -21,16 +23,14 @@ function removeAllChildNodes(parn){
     }
 }
 
-function toggleVisibility(target){
-    // target.style.color;target.style.color
+function setVisibility(target,force='block'){
+    console.log("Toggling ", target);
     console.log("visibility ",window.getComputedStyle(target).getPropertyValue('display'));
-    if(target.style.display == "none"){
-        target.style.display = "block";
-    }else{
-        target.style.display="none";
-    }
+    target.style.display = force;
+
 
 }
+
 function restartClock(){
     time=10;
     refreshClock();
@@ -40,26 +40,36 @@ function refreshClock(){
     CLOCK.innerText=time;
 }
 
+function displayStart(){
+    setVisibility(mainTarget,"none");
+    setVisibility(OUTRO,"none");
+    setVisibility(INTRO,"block");
+}
+
+function displayMain(){
+    setVisibility(INTRO,"none");
+    setVisibility(OUTRO,"none");
+    setVisibility(mainTarget,"block");
+}
+
 function displayEnd(){
-    toggleVisibility(QUESTION_TITLE);
-    toggleVisibility(FEEDBACK);
-    toggleVisibility(SELECTIONS);
+    setVisibility(INTRO,"none");
+    setVisibility(mainTarget,"none");
+    setVisibility(OUTRO,"block");
     //add input box so they can enter their name and add them to the high score list.
 }
 
-function restart(){
-    if(window.getComputedStyle(QUESTION_TITLE).getPropertyValue('display') == "block"){
-        toggleVisibility(QUESTION_TITLE);
-        toggleVisibility(FEEDBACK);
-        toggleVisibility(SELECTIONS);
-        score=0
-        qCount=0;
-        timer=null;
-    }
+function toggleButton(){
     
 }
 
-
+function restart(){
+    displayMain();
+    score=0
+    qCount=0;
+    timer=null;    
+    displayQuestion();
+}
 
 
 function checkAnswer(answer=true,correct=false) {
@@ -67,6 +77,11 @@ function checkAnswer(answer=true,correct=false) {
     console.log("Answer submited: ",answer);
     console.log("Correct Answer: ",correct);
     // targetAnswer.setAttribute("id","feedback-fade");
+    setTimeout(function(){
+        SELECTIONS.addEventListener('click', (event)=>{
+            event.preventDefault();
+        });
+    },2000);
     setTimeout(function(){FEEDBACK.setAttribute("id","feedback");}, 2000);
 
     if(answer==correct){
@@ -79,7 +94,6 @@ function checkAnswer(answer=true,correct=false) {
         console.log("wrong");
     }
     nextQuestion();
-
 }
 
 function nextQuestion(){
@@ -93,7 +107,6 @@ function nextQuestion(){
         displayEnd();
         CLOCK.style.visibility= "hidden";
     }
-
 }
 
 function displayQuestion(){
@@ -106,8 +119,6 @@ function displayQuestion(){
         let tempButton = document.createElement('button');
         tempButton.setAttribute("id","selection-section-button");
 
-        // console.log("Correct answer, ",QUESTIONS[qCount][2]);
-        // console.log("If clicked supplied answer, ",answer);
         tempButton.addEventListener('click',function(){checkAnswer(answer,QUESTIONS[qCount][2])});
         tempButton.innerText=answer;
         SELECTIONS.appendChild(tempOl.appendChild(tempListItem.appendChild(tempButton)));
@@ -118,30 +129,19 @@ function displayQuestion(){
         if(time==0){
             refreshClock();
             checkAnswer();
+            displayEnd();
 
         }
         refreshClock();
 
     },1000);
-
-
 }
 
 
 function quiz(){
-    // let someInt=setInterval(displayClock,500);
-    // timer = setInterval(f)
-    displayQuestion()
-    // startButton.style.visibility = "hidden";
-    // qCount++
+    restart();
+    // displayQuestion()
 
-    // let someInt=setInterval(function(){
-    //     displayClock();
-    //     if(time==0){
-    //         clearInterval(someInt);
-    //     }
 
-    // },500);
-    // console.log(someInt);
 }
 
