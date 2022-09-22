@@ -1,85 +1,77 @@
 html{
     background-color: #1b1b1e;
 }
-
-
-header{
-    display: inline;
-}
-
+/* Main Wrappers */
 #site-wrapper{
     position: relative;
     display: flex;
     flex-direction: column;
 }
+
 #header-wrapper{
-    display: inline;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#header-wrapper a{
+    padding-top: 2%;
+    text-decoration: none;
+    font-size: 2em;
+    color: #C8D3D5;
+    border: 2px solid #5E757F;
+}
+/* Score and timer styling */
+#score{
+    color: #C8D3D5;
+    font-size: 5em;
 }
 
 #timer{
-    margin-right: 15px;
+    color: #C8D3D5;
+    font-size: 5em;
 }
 
 #body-wrapper{
-    /* font-size: 40px; */
-    height: 65%;
-    /* border: 4px solid bl; */
-    display: flex;
-    justify-content: center;
-}
-
-#intro{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
+}
+/* Styling for first screen seen when visiting */
+#intro{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-left: 20%;
+    width: 60%;
 }
 
 #intro h1{
-    color: #5E757F;
+    color: #ff8a5b;
     border-bottom: 4px dotted #C20114;
     font-size: 35px;
+    width: 66%;
+    padding-bottom: 2%;
+
 }
 #intro p{
     font-size: 28px;
+    margin-top: 3%;
+    color: #C8D3D5;
+}
+
+/* Styling for questions and buttons */
+#main{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-left: 20%;
+    width: 60%;
 }
 
 #question-title{
     color: #ff8a5b;
     border-bottom: 4px dotted #C20114;
     font-size: 45px;
-}
-p{
-    color: #C8D3D5;
-}
-
-
-#footer-wrapper{
-    position: sticky;
-}
-
-
-#main{
-    display: none;
-}
-
-#outro{
-    display: none;
-}
-
-#outro h2{
-    color: #5E757F;
-    border-bottom: 4px dotted #C20114;
-    font-size: 35px;
-}
-
-#outro p{
-    font-size: 28px;
-}
-
-#scoreb p{
-    color: red;
-    font-size: 35px;
 }
 
 #selection-section{
@@ -90,14 +82,18 @@ p{
 
 #selection-section-list{
     display: flex;
+    flex-direction: column;
 }
 
 #selection-section-button{
-    /* background-color: red; */
     padding: 2em;
     margin: 1em;
+    color:#C8D3D5;
+    background-color: #5E757F;
+    font-size: 20px;
 }
 
+/* Styling for the red and green correct at bottom */
 #feedback{
     opacity: 0%;
     border-top: 10px solid black;
@@ -106,16 +102,15 @@ p{
 #feedback-fade-wrong{
     color: red;
     animation: fadeInOut 2s linear 1 forwards;
+    font-size: 8em;
 }
 #feedback-fade-right{
     color: green;
     animation: fadeInOut 2s linear 1 forwards;
+    font-size: 8em;
 }
 
-#score{
-
-}
-  
+/* keyframes for the animation of the fade */
 @keyframes fadeInOut {
     0% {
         opacity: 0;
@@ -127,3 +122,64 @@ p{
         opacity: 0;
     }
 }
+
+
+/* styling for displaying score and collecting initals */
+#outro{
+    display: none;
+    flex-direction: column;
+    align-items: baseline;
+    margin-left: 20%;
+    width: 60%;
+}
+
+#outro h2{
+    color: #ff8a5b;
+    border-bottom: 4px dotted #C20114;
+    font-size: 35px;
+    padding-bottom: 2%;
+}
+
+#scoring{
+    font-size: 28px;
+    margin-top: 3%;
+    color: #C8D3D5;
+}
+
+#sub{
+    margin-top: 3%;
+    padding: 1%;
+    width: fit-content;
+    background-color: #5E757F;
+    border: 4px solid #C8D3D5;
+    border-radius: 3%;
+}
+
+#start{
+    margin-top: 3%;
+    padding: 1%;
+    width: fit-content;
+    margin-left: 40%;
+    background-color: #5E757F;
+    border: 4px solid #C8D3D5;
+    border-radius: 3%;
+}
+
+#scoreb li{
+    color: #C8D3D5;
+    text-align: center;
+    font-size: 35px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

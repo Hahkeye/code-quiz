@@ -9,12 +9,13 @@
         <title>Coding Quiz</title>
     </head>
     <div id="site-wrapper">
-        <div id="header-wrapper">
-            <header>
-                <p> view stats</p>
+        <header>
+            <div id="header-wrapper">
+                <a href="javascript:displayBoard();">View stats</a>
+                <p id="score"></p>
                 <p id="timer"></p>
-            </header>
-        </div>
+            </div>
+        </header>
         <div id="body-wrapper">
             <body>
                 <main>
@@ -30,29 +31,18 @@
                         <p id="feedback"></p>
                     </div>
                     <div id="outro">
-                        <h2>All done</h2>
-                        <p id="score">Your score is X</p>
-                        <!-- <p>enter initials then add to board.</p> -->
-                        <div id="inputTake">
+                        <h2>All Questions Answered</h2>
+                        <!-- <p id="score">Your score is X</p> -->
+                        <div id="scoring">
                             <label for="initials">Enter your initials for the leaderboard:</label>
                             <input type="text" id="initials" name="initials" maxlength="3">
                             <button id="sub" onclick="addBoard()">submit</button>
                         </div>
-                        <!-- <label for="initials">Enter your initials for the leaderboard:</label>
-                        <input type="text" id="initials" name="initials" maxlength="3">
-                        <button id="sub" onclick="addBoard()">submit</button> -->
-                        <div id="scoreb">
-
-                        </div>
                     </div>
+                    <ul id="scoreb"></ul>
                 </main>
             </body>
-        </div>
-        <div id="footer-wrapper">
-            <footer>
-                <button id="start" onclick="quiz()">Start Quiz</button>
-                <button id="reset-menu" onclick="toggleButton()">reset mrn</button>
-            </footer>
+            <button id="start" onclick="quiz()">Start Quiz</button>
         </div>
     </div>
     <script src="./assets/js/script.js"></script>
