@@ -23,19 +23,27 @@
                         <p> Try doing what ever it is so you can get achive the highest score. </p>
                     </div>
                     <div id="main">
-                        <h1 id="question-title"></h1>
+                        <h2 id="question-title"></h2>
                         <br>
                         <div id="selection-section"></div>
                         <br>
                         <p id="feedback"></p>
                     </div>
                     <div id="outro">
-                        <h1>All done</h1>
-                        <p>Your score is X</p>
-                        <p>enter initials then add to board.</p>
-                        <label for="initials">Enter your initials for the leaderboard:</label>
+                        <h2>All done</h2>
+                        <p id="score">Your score is X</p>
+                        <!-- <p>enter initials then add to board.</p> -->
+                        <div id="inputTake">
+                            <label for="initials">Enter your initials for the leaderboard:</label>
+                            <input type="text" id="initials" name="initials" maxlength="3">
+                            <button id="sub" onclick="addBoard()">submit</button>
+                        </div>
+                        <!-- <label for="initials">Enter your initials for the leaderboard:</label>
                         <input type="text" id="initials" name="initials" maxlength="3">
-                        <button>submit</button>
+                        <button id="sub" onclick="addBoard()">submit</button> -->
+                        <div id="scoreb">
+
+                        </div>
                     </div>
                 </main>
             </body>
@@ -43,6 +51,7 @@
         <div id="footer-wrapper">
             <footer>
                 <button id="start" onclick="quiz()">Start Quiz</button>
+                <button id="reset-menu" onclick="toggleButton()">reset mrn</button>
             </footer>
         </div>
     </div>

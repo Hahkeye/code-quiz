@@ -1,5 +1,5 @@
 html{
-    background-color: grey;
+    background-color: #1b1b1e;
 }
 
 
@@ -21,11 +21,39 @@ header{
 }
 
 #body-wrapper{
-    font-size: 40px;
+    /* font-size: 40px; */
+    height: 65%;
     /* border: 4px solid bl; */
-    display: block;
+    display: flex;
     justify-content: center;
 }
+
+#intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#intro h1{
+    color: #5E757F;
+    border-bottom: 4px dotted #C20114;
+    font-size: 35px;
+}
+#intro p{
+    font-size: 28px;
+}
+
+#question-title{
+    color: #ff8a5b;
+    border-bottom: 4px dotted #C20114;
+    font-size: 45px;
+}
+p{
+    color: #C8D3D5;
+}
+
+
 #footer-wrapper{
     position: sticky;
 }
@@ -39,24 +67,35 @@ header{
     display: none;
 }
 
+#outro h2{
+    color: #5E757F;
+    border-bottom: 4px dotted #C20114;
+    font-size: 35px;
+}
 
-#question-title{
-    border-bottom: 4px dotted black;
+#outro p{
+    font-size: 28px;
+}
+
+#scoreb p{
+    color: red;
+    font-size: 35px;
 }
 
 #selection-section{
     display: flex;
+    flex-direction: column;
     border-bottom: 4px dotted black;
 }
 
 #selection-section-list{
-    display: block;
+    display: flex;
 }
 
 #selection-section-button{
     /* background-color: red; */
-    padding: 3em;
-    margin: 3em;
+    padding: 2em;
+    margin: 1em;
 }
 
 #feedback{
@@ -71,6 +110,10 @@ header{
 #feedback-fade-right{
     color: green;
     animation: fadeInOut 2s linear 1 forwards;
+}
+
+#score{
+
 }
   
 @keyframes fadeInOut {
