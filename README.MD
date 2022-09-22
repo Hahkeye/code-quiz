@@ -51,6 +51,6 @@ and boom scores have been cleared.
 ## Pages
 
 If you would like to view this live. Github has this great utility called Gitpages where you can host stuff.
-If you click [here](https://hahkeye.github.io/password-generator/)
+If you click [here](https://hahkeye.github.io/code-quiz/)
 
 ![deployedpage](./docs/deployed.png)
